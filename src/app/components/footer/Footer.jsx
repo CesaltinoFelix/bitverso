@@ -1,7 +1,8 @@
 const Footer = ()=>{
     return (
         <div>
-            Footer
+            <div>© Cesaltino Félix. Todos os direitos reservados.</div>
+            <div></div>
         </div>
     )
 }
