@@ -1,9 +1,5 @@
-const Loading = ()=>{
-    return (
-        <div>
-            Loading
-        </div>
-    )
-}
+"use client"
 
-export default Loading
+export default function Loading() {
+  return <p>Loading...</p>
+}

@@ -1,3 +1,5 @@
+"use client";
+import styles from "./page.module.css";
 import Link from "next/link"
 
 const links = [
@@ -35,12 +37,22 @@ const links = [
 
 const Navbar = ()=>{
     return (
-        <div>
-            <Link href="/">BitVerso</Link>
-            <div>
+        <div className={styles.container}>
+            <Link href="/" className={styles.logo}>
+            BitVerso
+            </Link>
+            <div className={styles.links}>
                 {links.map((link)=>{
-                   return <Link key={link.id} href={link.url}>{link.title}</Link>
+                   return <Link key={link.id} href={link.url} className={styles.link}>{link.title}</Link>
                 })}
+                <button
+                className={styles.logout}
+                onClick={()=>{
+                    // Handle logout logic here
+                    console.log("Logout clicked");
+                }}>
+                  Logout
+                </button>
             </div>
         </div>
     )

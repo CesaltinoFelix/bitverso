@@ -1,0 +1,13 @@
+.container{
+    height: 50px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,6 +1,8 @@
+import styles from "./page.module.css"
+
 const Category = ()=>{
     return (
-        <div>Category</div>
+        <div className={styles.container}>Category</div>
     )
 }
 
