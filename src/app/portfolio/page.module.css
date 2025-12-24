@@ -1,3 +1,45 @@
 .container{
-    background-color: red;
+}
+
+.mainTitle{
+    font-size: 100px;
+}
+
+.selectTitle{
+    margin: 20px 0px;
+}
+
+.items{
+    display: flex;
+    gap: 50px;
+}
+
+.item{
+    border: 5px solid #bbb;
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover !important;
+}
+
+.title{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.item .img{
+    transition: all 0.3s ease-in-out;
+}
+
+.item:hover .img{
+    transform: scale(1.1);
+}
+
+.item:hover .title{
+    color: #53c28b;
 }
