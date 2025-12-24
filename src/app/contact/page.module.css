@@ -1,53 +1,75 @@
-.container{
-   
+.container {
 }
 
-.title{
-    font-size: 60px;
-    margin-bottom: 100px;
-    text-align: center;
+.title {
+  font-size: 60px;
+  margin-bottom: 100px;
+  text-align: center;
 }
 
-.content{
-    display: flex;
-    align-items: center;
-    gap: 100px;
+.content {
+  display: flex;
+  align-items: center;
+  gap: 100px;
 }
 
-.imgContainer{
-    flex: 1;
-    height: 500px;
-    position: relative;
+.imgContainer {
+  flex: 1;
+  height: 500px;
+  position: relative;
 }
 
-.img{
-    object-fit: contain;
-    animation: move 3s infinite ease alternate;
+.img {
+  object-fit: contain;
+  animation: move 3s infinite ease alternate;
 }
 
 @keyframes move {
-    0% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px) scale(1.05);
-    }
+  0% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px) scale(1.05);
+  }
 }
 
-.form{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.input, .textarea{
-    padding: 20px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #bbb;
-    border: 2px solid #bbb;
-    font-size: 20px;
-    font-weight: bold;
+.input,
+.textarea {
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #bbb;
+  border: 2px solid #bbb;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+  .title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .imgContainer {
+    height: 350px;
+  }
+
+  .form {
+    gap: 15px;
+  }
+
+  .input,
+  .textarea {
+    padding: 15px;
+    font-size: 16px;
+  }
+
 }

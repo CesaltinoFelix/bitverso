@@ -12,7 +12,7 @@ const Contact = ()=>{
                 <div className={styles.form}>
                     <input type="text" placeholder="Your Name" className={styles.input} />
                     <input type="email" placeholder="Your Email" className={styles.input} />
-                    <textarea placeholder="Your Message" cols={30} rows={10} className={styles.textarea}></textarea>
+                    <textarea placeholder="Your Message" cols={30} rows={8} className={styles.textarea}></textarea>
                     <Button label="Send Message" url="#" />
                 </div>
 

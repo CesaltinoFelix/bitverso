@@ -8,3 +8,9 @@
     width: max-content;
     color: white;
 }
+
+@media (max-width: 1300px){
+    .container{
+        padding: 15px;
+    }
+}

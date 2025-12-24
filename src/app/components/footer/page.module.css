@@ -11,3 +11,12 @@
     align-items: center;
     gap: 10px;
 }
+
+@media (max-width: 768px){
+    .social{
+        margin-bottom: 10px;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+}

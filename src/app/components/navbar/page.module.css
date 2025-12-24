@@ -29,3 +29,10 @@
     border-radius: 3px;
 
 }
+
+@media (max-width: 1300px)
+{
+    .container{
+        height: 70px;
+    }
+}
