@@ -1,3 +1,43 @@
 .container{
-    background-color: red;
+}
+
+.catTitle{
+  color: #53c28b;
+  text-transform: capitalize;
+}
+
+.item{
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.item:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+.imgContainer{
+    flex: 1;
+    height: 500px;
+    position: relative;
+}
+
+.img{
+    object-fit: cover;
+}
+
+.content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title{
+    font-size: 50px;
+}
+.desc{
+    font-size: 20px;
 }
