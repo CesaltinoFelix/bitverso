@@ -2,10 +2,10 @@
 import React from "react";
 import useSWR from "swr";
 
+const fetcher = (url) => fetch(url).then((r) => r.json());
 const Dashboard = () => {
-    const fetcher = (url) => fetch(url).then((r) => r.json());
   const { data, error, isLoading } = useSWR(
-    "https:jsonhttps://jsonplaceholder.typicode.com/posts",
+    "https://jsonplaceholder.typicode.com/posts",
     fetcher
   );
 
