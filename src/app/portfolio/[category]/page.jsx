@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import Button from "./../../components/button/Button";
+import Button from "./../../../components/button/Button";
 import Image from "next/image";
 const Category = async ({ params }) => {
   const { category } = await params;

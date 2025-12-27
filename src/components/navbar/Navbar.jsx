@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import Link from "next/link"
-
+import DarkModeToggle from "../darkModeToggle/DarkModeToggle"
 const links = [
   {
     id: 1,
@@ -42,13 +42,13 @@ const Navbar = ()=>{
             BitVerso
             </Link>
             <div className={styles.links}>
+              <DarkModeToggle />
                 {links.map((link)=>{
                    return <Link key={link.id} href={link.url} className={styles.link}>{link.title}</Link>
                 })}
                 <button
                 className={styles.logout}
                 onClick={()=>{
-                    // Handle logout logic here
                     console.log("Logout clicked");
                 }}>
                   Logout
