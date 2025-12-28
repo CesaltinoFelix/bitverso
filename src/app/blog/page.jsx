@@ -1,37 +1,38 @@
-import Link from "next/link";
+import React from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
 import Image from "next/image";
 
-const Blog = async () => {
-  async function fetchPosts() {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-      cache: "force-cache",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch posts");
-    }
-    const data = await res.json();
-    return data;
+async function getData() {
+  const res = await fetch("http://localhost:3000/api/posts", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
   }
 
-  const posts = await fetchPosts();
+  return res.json();
+}
 
+const Blog = async () => {
+  const data = await getData();
   return (
     <div className={styles.mainContainer}>
-      {posts.map((post) => (
-        <Link href={`/blog/${post.id}`} className={styles.container} key={post.id}>
+      {data.map((item) => (
+        <Link href={`/blog/${item._id}`} className={styles.container} key={item.id}>
           <div className={styles.imageContainer}>
             <Image
-              className={styles.image}
-              src="https://images.pexels.com/photos/28839480/pexels-photo-28839480.jpeg"
+              src={item.img}
               alt=""
               width={400}
               height={250}
+              className={styles.image}
             />
           </div>
           <div className={styles.content}>
-            <h1 className={styles.title}>{post.title}</h1>
-            <p className={styles.desc}>{post.body}</p>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.desc}>{item.desc}</p>
           </div>
         </Link>
       ))}

@@ -2,9 +2,15 @@ import styles from "./page.module.css";
 import Button from "./../../../components/button/Button";
 import Image from "next/image";
 import { items } from "./data";
+import { notFound } from "next/navigation";
 const Category = async ({ params }) => {
   const { category } = await params;
   const data = items[category];
+
+  if(!data){
+    notFound();
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.catTitle}>{category}</h1>
