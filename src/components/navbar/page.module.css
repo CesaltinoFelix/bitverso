@@ -24,3 +24,7 @@
   cursor: pointer;
   border-radius: 3px;
 }
+
+.dot {
+  color: #53c28b;
+}
