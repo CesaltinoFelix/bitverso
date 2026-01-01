@@ -11,18 +11,22 @@ const handler = NextAuth({
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
+      },
       async authorize(credentials) {
         //Check if the user exists.
         await connect();
 
         try {
           const user = await User.findOne({
-            email: credentials.email,
+            email: credentials?.email,
           });
 
           if (user) {
             const isPasswordCorrect = await bcrypt.compare(
-              credentials.password,
+              credentials?.password || "",
               user.password
             );
 
