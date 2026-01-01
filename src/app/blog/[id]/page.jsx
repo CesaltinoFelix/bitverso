@@ -17,8 +17,8 @@ async function getData(id) {
 
 
 export async function generateMetadata({ params }) {
-  const {id} = await params
-  const post = await getData(id)
+
+  const post = await getData(params.id)
   return {
     title: post.title,
     description: post.desc,
@@ -26,8 +26,7 @@ export async function generateMetadata({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
-  const {id} = await params
-  const data = await getData(id);
+  const data = await getData(params.id);
   return (
     <div className={styles.container}>
       <div className={styles.top}>

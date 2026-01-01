@@ -11,7 +11,11 @@ export const GET = async (request) => {
   try {
     await connect();
 
-    const posts = await Post.find(username && { username });
+    if(!username) {
+      const posts = await Post.find();
+      return new NextResponse(JSON.stringify(posts), { status: 200 });
+    }
+    const posts = await Post.find({ username });
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {
