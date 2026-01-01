@@ -20,7 +20,7 @@ const handler = NextAuth({
         await connect();
 
         try {
-          const user = await User.findOne({
+          const user = await (User as any).findOne({
             email: credentials?.email,
           });
 

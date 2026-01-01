@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { getProviders, signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-const Login = () => {
+const LoginForm = () => {
   const session = useSession();
   const router = useRouter();
   const params = useSearchParams();
@@ -77,6 +77,14 @@ const Login = () => {
         Login with Github
       </button> */}
     </div>
+  );
+};
+
+const Login = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginForm />
+    </Suspense>
   );
 };
 
